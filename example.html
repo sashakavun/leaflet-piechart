@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leaflet-hash</title>
+  <title>L.PiechartMarker</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css"/>
   <style type="text/css">
@@ -40,12 +40,12 @@
 <script type="text/javascript" src="leaflet-piechart.js"></script>
 <script type="text/javascript">
   (function () {
-    var map = L.map("map", {
+    var map = L.map('map', {
       "zoom": 12,
       "center": [37.7630, -122.4435]
     });
 
-    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", { "attribution": "&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors" }).addTo(map);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://osm.org/copyright\">OpenStreetMap</a> contributors' }).addTo(map);
 
       L.piechartMarker(
           L.latLng([37.7930, -122.4035]),
