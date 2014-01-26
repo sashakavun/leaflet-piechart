@@ -1,0 +1,10 @@
+{
+  "name": "leaflet-piechart",
+  "version": "0.1.0",
+  "description": "Pie chart marker for Leaflet library",
+  "main": "leaflet-piechart.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keta/leaflet-piechart.git"
+  }
+}
