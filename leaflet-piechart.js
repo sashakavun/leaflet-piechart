@@ -186,8 +186,10 @@
                 return Math.round(r * 255) + ',' + Math.round(g * 255) + ',' + Math.round(b * 255);
             };
 
-            var hue = (360 / total * (segment + 1)) / 360;
-            var rgb = hslToRgb(hue, .9, .3);
+            var angle = 360 / (total * 2);
+            var offset = (segment % 2) * total;
+            var hue = (angle * (offset + (segment - (segment % 2)))) / 360;
+            var rgb = hslToRgb(hue, 0.7, 0.5);
             return {
                 fillStyle: 'rgba(' + rgb + ',.5)',
                 strokeStyle: 'rgba(' + rgb + ',.7)',
