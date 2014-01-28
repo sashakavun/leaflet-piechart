@@ -30,19 +30,17 @@
   </style>
 </head>
 <body>
-<div id="header-container">
-  <div id="header">
-    <h1><a href="http://github.com/keta/leaflet-piechart">L.PiechartMarker</a></h1>
-  </div>
-</div>
+<h1><a href="http://github.com/keta/leaflet-piechart">L.PiechartMarker</a></h1>
+<p><em>Pie chart Marker plugin for Leaflet library.</em> Check out <a href="https://github.com/keta/leaflet-piechart">code</a>.</p>
 <div id="map"></div>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet-src.js"></script>
+<script src="http://keta.github.io/leaflet-canvasicon/leaflet-canvasicon.js"></script>
 <script type="text/javascript" src="leaflet-piechart.js"></script>
 <script type="text/javascript">
   (function () {
     var map = L.map('map', {
-      "zoom": 12,
-      "center": [37.7630, -122.4435]
+      zoom: 12,
+      center: [37.7630, -122.4435]
     });
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://osm.org/copyright\">OpenStreetMap</a> contributors' }).addTo(map);

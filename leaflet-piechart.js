@@ -3,47 +3,9 @@
     'use strict';
 
     /**
-     * Canvas Icon
-     * @type {L.Icon}
-     */
-    L.CanvasIcon = L.Icon.extend({
-        options: {
-            iconSize: [24, 24],
-            iconAnchor: [12, 12],
-            className: 'leaflet-canvas-icon'
-        },
-
-        /**
-         * @param oldIcon
-         * @returns {HTMLCanvasElement}
-         */
-        createIcon: function (oldIcon) {
-            var size = L.point(this.options.iconSize);
-            var icon = (oldIcon && oldIcon.tagName === 'CANVAS') ? oldIcon : document.createElement('canvas');
-            icon.width = size.x;
-            icon.height = size.y;
-            this._setIconStyles(icon, 'icon');
-            return icon;
-        },
-
-        createShadow: function () {
-            return null;
-        }
-    });
-
-    /**
-     * Canvas Icon factory
-     * @param options
-     * @returns {L.CanvasIcon}
-     */
-    L.canvasIcon = function (options) {
-        return new L.CanvasIcon(options);
-    };
-
-
-    /**
      * Piechart Icon
-     *
+     * @type {L.PiechartIcon}
+     * @extends {L.CanvasIcon}
      */
     L.PiechartIcon = L.CanvasIcon.extend({
         options: {
@@ -70,21 +32,12 @@
         },
 
         /**
-         * @param oldIcon
-         * @returns {HTMLCanvasElement}
-         */
-        createIcon: function (oldIcon) {
-            var icon = L.CanvasIcon.prototype.createIcon.apply(this, arguments);
-            this.drawIcon(icon, this.options.data);
-            return icon;
-        },
-
-        /**
          * @param {HTMLCanvasElement} icon
-         * @param {object[]} [data]
+         * @param {string} type
          */
-        drawIcon: function (icon, data) {
-            if (data && L.Util.isArray(data) && icon.getContext) {
+        _setIconStyles: function (icon, type) {
+            var data = this.options.data;
+            if ((type == 'icon') && data && L.Util.isArray(data) && icon.getContext) {
                 var ctx = icon.getContext('2d');
                 var size = L.point(this.options.iconSize);
                 var center = size.divideBy(2);
@@ -117,7 +70,7 @@
         },
 
         /**
-         * @param {object[]} data Array of objects
+         * @param {Object[]} data Array of objects
          * @param {string} field Field to summarize
          * @returns {number}
          * @private
@@ -133,7 +86,7 @@
         /**
          * Applies context style
          * @param {CanvasRenderingContext2D} ctx
-         * @param {object} props
+         * @param {Object} props
          * @private
          */
         _applyStyle: function (ctx, props) {
@@ -199,6 +152,15 @@
     });
 
     /**
+     * Pie char Icon factory
+     * @param {Object} options
+     * @returns {L.PiechartIcon}
+     */
+    L.piechartIcon = function (options) {
+        return new L.PiechartIcon(options);
+    };
+
+    /**
      * Pie chart Marker
      * @type {L.Marker}
      */
@@ -230,4 +192,5 @@
     L.piechartMarker = function (latlng, options) {
         return new L.PiechartMarker(latlng, options);
     }
+
 }());

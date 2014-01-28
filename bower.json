@@ -1,0 +1,31 @@
+{
+  "name": "L.PiechartMarker",
+  "main": "leaflet-piechart.js",
+  "version": "0.1.1",
+  "homepage": "https://github.com/keta/leaflet-piechart",
+  "authors": [
+    "Aleksandr Kavun <iam@sashakavun.ru>"
+  ],
+  "description": "Pie chart Marker plugin for Leaflet library",
+  "keywords": [
+    "leaflet",
+    "marker",
+    "piechart",
+    "pie",
+    "chart",
+    "data",
+    "visualization"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "~0.7.2",
+    "leaflet-canvasicon": "~0.1.1"
+  }
+}
