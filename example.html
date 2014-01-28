@@ -87,6 +87,18 @@
           }
       ).addTo(map);
 
+      L.piechartMarker(
+          L.latLng([37.723, -122.4236]),
+          {
+              radius: 25,
+              data: [
+                  { name: 'One', value: 200 },
+                  { name: 'Two', value: 300 },
+                  { name: 'Three', value: 400 }
+              ]
+          }
+      ).addTo(map);
+
   }());
 </script>
 </body>
