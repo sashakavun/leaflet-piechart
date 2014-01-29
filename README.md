@@ -5,4 +5,4 @@ Pie chart marker for Leaflet library. Uses [L.CanvasIcon](https://github.com/ket
 
 Check out the [example](http://keta.github.io/leaflet-piechart/example.html).
 
-Available in the <a href="http://bower.io">Bower</a> registry as "leaflet-piechart".
+Available in the [Bower](http://bower.io) registry as "leaflet-piechart".

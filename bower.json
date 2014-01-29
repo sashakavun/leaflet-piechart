@@ -1,7 +1,7 @@
 {
   "name": "L.PiechartMarker",
   "main": "leaflet-piechart.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/keta/leaflet-piechart",
   "authors": [
     "Aleksandr Kavun <iam@sashakavun.ru>"
