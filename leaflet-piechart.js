@@ -67,6 +67,7 @@
                     }
                 }
             }
+            L.CanvasIcon.prototype._setIconStyles.apply(this, arguments);
         },
 
         /**
@@ -166,20 +167,21 @@
      */
     L.PiechartMarker = L.Marker.extend({
         options: {
-            icon: new L.PiechartIcon(),
+            icon: null,
             radius: 20,
             riseOnHover: true
         },
 
         initialize: function (latlng, options) {
-            var opts = { data: options.data || this.options.data };
-            if (options.radius) {
-                var diameter = options.radius * 2;
+            var opts = {};
+            L.Util.extend(opts, options);
+            if (opts.radius) {
+                var diameter = opts.radius * 2;
                 opts.iconSize = [diameter, diameter];
-                opts.iconAnchor = [options.radius, options.radius];
+                opts.iconAnchor = [opts.radius, opts.radius];
             }
-            L.setOptions(options.icon || this.options.icon, opts);
-            L.Marker.prototype.initialize.apply(this, arguments);
+            opts.icon = L.piechartIcon(opts);
+            L.Marker.prototype.initialize.apply(this, [latlng, opts]);
         }
     });
 
