@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>L.PiechartMarker</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css"/>
+  <style type="text/css">
+    #header {
+      padding:0 1em;
+    }
+
+    body {
+      padding:0;
+      margin:0;
+    }
+
+    #description {
+      line-height:0px;
+      font-style:italic;
+    }
+
+    #map {
+      top:120px;
+      bottom:0;
+      left:0;
+      right:0;
+      position:absolute;
+      background:#fff;
+    }
+  </style>
+</head>
+<body>
+<h1><a href="http://github.com/sashakavun/leaflet-piechart">L.PiechartMarker</a></h1>
+<p><em>Pie chart Marker plugin for Leaflet library.</em> Check out <a href="https://github.com/sashakavun/leaflet-piechart">code</a>.</p>
+<div id="map"></div>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet-src.js"></script>
+<script src="http://sashakavun.github.io/leaflet-canvasicon/leaflet-canvasicon.js"></script>
+<script type="text/javascript" src="leaflet-piechart.js"></script>
+<script type="text/javascript">
+  (function () {
+    var map = L.map('map', {
+      zoom: 12,
+      center: [37.7630, -122.4435]
+    });
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://osm.org/copyright\">OpenStreetMap</a> contributors' }).addTo(map);
+
+      L.piechartMarker(
+          L.latLng([37.7930, -122.4035]),
+          {
+              data: [
+                  { name: 'Apples', value: 25 },
+                  { name: 'Oranges', value: 35 },
+                  { name: 'Bananas', value: 20 },
+                  { name: 'Pineapples', value: 30 }
+              ]
+          }
+      ).addTo(map);
+
+      L.piechartMarker(
+          L.latLng([37.683, -122.4536]),
+          {
+              radius: 50,
+              data: [
+                  { name: 'Boots', value: 500 },
+                  { name: 'Big Boots', value: 200 },
+                  { name: 'Sneakers', value: 700 },
+                  { name: 'Shoes', value: 350 },
+                  { name: 'Moccasins', value: 100 },
+                  { name: 'Bare foot', value: 200 }
+              ]
+          }
+      ).addTo(map);
+
+      L.piechartMarker(
+          L.latLng([37.743, -122.4836]),
+          {
+              radius: 25,
+              data: [
+                  { name: 'Black', value: 500, style: { fillStyle: 'rgba(0,0,0,.6)', strokeStyle: 'rgba(0,0,0,.95)', lineWidth: 10 } },
+                  { name: 'Red', value: 200, style: { fillStyle: 'rgba(255,0,0,.6)', strokeStyle: 'rgba(255,0,0,.95)', lineWidth: 7 } },
+                  { name: 'Blue', value: 700, style: { fillStyle: 'rgba(0,0,255,.6)', strokeStyle: 'rgba(0,0,255,.95)', lineWidth: 5 } },
+                  { name: 'Green', value: 350, style: { fillStyle: 'rgba(0,127,0,.6)', strokeStyle: 'rgba(0,127,0,.95)', lineWidth: 10 } }
+              ]
+          }
+      ).addTo(map);
+
+      L.piechartMarker(
+          L.latLng([37.723, -122.4236]),
+          {
+              radius: 25,
+              data: [
+                  { name: 'One', value: 200 },
+                  { name: 'Two', value: 300 },
+                  { name: 'Three', value: 400 }
+              ]
+          }
+      ).addTo(map);
+
+  }());
+</script>
+</body>
+</html>
