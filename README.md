@@ -17,7 +17,7 @@ L.piechartMarker(L.latLng([lat, long]), {
 
 The pie charts look like:
 <p align="center">
-    <img src="https://github.com/ps428/leaflet-piechart/blob/master/doughnutExample.png" width=500>
+    <img src="https://github.com/ps428/leaflet-piechart/blob/master/pieExample.png" width=500>
 </p>
 
 ## Doughnut Charts
@@ -37,5 +37,5 @@ L.doughnutchartMarker(L.latLng([lat, long]), {
 
 The doughnut charts look like:
 <p align="center">
-    <img src="https://github.com/ps428/leaflet-piechart/blob/master/pieExample.png" width=500>
+    <img src="https://github.com/ps428/leaflet-piechart/blob/master/doughnutExample.png" width=500>
 </p>
